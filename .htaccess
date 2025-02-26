@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Redirect HTTP to HTTPS and remove www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.schaerers\.info [NC]
+RewriteRule (.*) https://schaerers.info/$1 [L,R=301]
+
+# Redirect index files to root
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^/]+/)*index(\.[a-z0-9]+)?[^\ ]*\ HTTP/
+RewriteRule ^(([^/]+/)*)index(\.[a-z0-9]+)?$ / [R=301,L]
+
+# Internal rewrite for root requests to index.html (optional)
+RewriteRule ^$ index.html [L]
+
+redirect 301 /reisen/suedafrika/abschied-nehmen-von-sudafrika https://reisememo.ch/suedafrika
+#@__HCP_END__@#
+# Anything after the comment above is left alone
