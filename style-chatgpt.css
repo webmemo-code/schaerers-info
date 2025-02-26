@@ -1,0 +1,42 @@
+/* style.css */
+
+/* General styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+  
+/* Hero Section */
+.hero {
+  min-height: 60vh;
+  background: url("walter-schaerer-homepage-portrait-image.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+}
+  
+/* Section spacing */
+section {
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+}
+
+/* Footer color and spacing */
+footer {
+  background: #f0f0f0;
+  color: #000;
+  text-align: left;
+  padding-top: 0.1rem;
+  padding-left: 3rem;
+  padding-bottom: 0.2rem;
+  margin-top: 1rem;
+}
+
+.col-md-4 {
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+}
+  
