@@ -19,16 +19,19 @@
 
     <!-- AboutPage Schema -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "@id": "https://schaerers.info/#aboutpage",
-        "inLanguage": "de",
-        "url": "https://schaerers.info/",
-        "name": "Homepage von Walter Schärer aus Zürich",
-        "description": "Homepage von Walter Schärer. Generative AI Marketing Manager & Solutions Architect aus Zürich. Links zu meinen Blogs Webmemo, Reisememo und Travelmemo.",
-        "mainEntity": {"@id": "https://schaerers.info/#person-walter-schaerer"}
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "AboutPage"], // Specify both types in an array
+      "@id": "https://schaerers.info/",   // Unique ID for the page (using canonical URL is good)
+      "url": "https://schaerers.info/",   // The canonical URL of the page
+      "inLanguage": "de-CH",             // Language of the page content
+      "name": "Homepage von Walter Schärer aus Zürich", // Name/Title of the page
+      "description": "Homepage von Walter Schärer. Generative AI Marketing Manager & Solutions Architect aus Zürich. Links zu meinen Blogs Webmemo, Reisememo und Travelmemo.", // Description of the page
+      "mainEntity": {
+        "@id": "https://schaerers.info/#person-walter-schaerer" // Links this page to its main subject (Person)
+                                                              // Assumes a Person schema with this @id exists elsewhere on the page or is referenced
       }
+    }
     </script>
   
     <!-- Person Schema -->
@@ -48,7 +51,9 @@
           "width": 1032,
           "height": 1032
         },
-        "mainEntityOfPage": "https://schaerers.info/#aboutpage",
+        "mainEntityOfPage": { 
+          "@id": "https://schaerers.info/"
+        },
         "sameAs": [
           "https://www.google.com/search?kgmid=/g/11vyy41ctv",
           "https://github.com/webmemo-code",
@@ -74,7 +79,6 @@
         "jobTitle": "Generative AI Marketing Manager & Solutions Architect",
         "gender": "Male",
         "birthDate": "1966-02-24",
-        "disambiguatingDescription": "Walter Schärer ist ein Generative AI Marketing Manager und Solutions Architect sowie Blogger von der ETH Zürich. Er wohnt und arbeitet in Zürich. Auf Englisch ist die Schreibweise des Namens 'Walter Schaerer'",
         "skills": [
           {  
             "@type": "DefinedTerm",  
@@ -111,11 +115,6 @@
             "@type": "Thing",  
             "name": "Content Marketing",  
             "sameAs": "https://www.wikidata.org/wiki/Q558685"  
-          },
-          {  
-            "@type": "Thing",  
-            "name": "Content Marketing",  
-            "sameAs": "https://www.wikidata.org/wiki/Q117246174"  
           },
           {  
             "@type": "Thing",  
