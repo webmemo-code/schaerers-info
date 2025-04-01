@@ -17,18 +17,43 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style-chatgpt.css" />
 
-    <!-- AboutPage Schema -->
+    <!-- WebPage and ProfilePage Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["WebPage", "AboutPage"], // Specify both types in an array
-      "@id": "https://schaerers.info/",   // Unique ID for the page (using canonical URL is good)
-      "url": "https://schaerers.info/",   // The canonical URL of the page
-      "inLanguage": "de-CH",             // Language of the page content
-      "name": "Homepage von Walter Schärer aus Zürich", // Name/Title of the page
-      "description": "Homepage von Walter Schärer. Generative AI Marketing Manager & Solutions Architect aus Zürich. Links zu meinen Blogs Webmemo, Reisememo und Travelmemo.", // Description of the page
+      "@type": "WebPage",
+      "@id": "https://schaerers.info/",
+      "url": "https://schaerers.info/",
+      "inLanguage": "de-CH",
+      "name": "Homepage von Walter Schärer aus Zürich",
+      "description": "Homepage von Walter Schärer. Generative AI Marketing Manager & Solutions Architect aus Zürich.",
       "mainEntity": {
-        "@id": "https://schaerers.info/#person" // Links this page to its main subject (Person)
+        "@id": "https://schaerers.info/#person"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".lead"]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "https://schaerers.info/"
+        ]
+      },
+      "subjectOf": {
+        "@type": "ProfilePage",
+        "@id": "https://schaerers.info/#profilepage",
+        "name": "Profil von Walter Schärer",
+        "description": "Homepage von Walter Schärer, Generative AI Marketing Manager & Solutions Architect aus Zürich. Links zu meinen Blogs Webmemo.ch, Reisememo.ch und Travelmemo.com",
+        "mainEntity": {
+          "@id": "https://schaerers.info/#person"
+        },
+        "relatedLink": [
+          "https://webmemo.ch",
+          "https://reisememo.ch",
+          "https://travelmemo.com",
+          "https://www.linkedin.com/in/walterschaerer/"
+        ]
       }
     }
     </script>
@@ -76,7 +101,7 @@
           "https://www.reddit.com/user/Chemical_Pin_6793/"
         ],
         "jobTitle": "Generative AI Marketing Manager & Solutions Architect",
-        "gender": "Male",
+        "gender": "http://schema.org/Male",
         "birthDate": "1966-02-24",
         "skills": [
           {  
@@ -165,13 +190,13 @@
             "@id": "https://ethz.ch/de.html",
             "url": "https://ethz.ch/de.html",
             "name": "ETH Zu00fcrich",
-            "alternateName": "Eidgenu00f6ssische Technische Hochschule Zu00fcrich",
+            "alternateName": "Eidgenössische Technische Hochschule Zürich",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/ETH_Z%C3%BCrich_Logo_black.svg/330px-ETH_Z%C3%BCrich_Logo_black.svg.png",
             "description": "ETH Zurich is a leading science and technology university in Switzerland.",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Ru00e4mistrasse 101",
-                "addressLocality": "Zurich",
+                "streetAddress": "Rämistrasse 101",
+                "addressLocality": "Zürich",
                 "postalCode": "8092",
                 "addressCountry": "CH"
             },
